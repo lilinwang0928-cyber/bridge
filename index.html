@@ -110,7 +110,7 @@ p{margin:.5em 0}
 /* apartment sim */
 .apt{display:grid;grid-template-columns:1fr 1.05fr;gap:16px}
 @media (max-width:720px){.apt{grid-template-columns:1fr}}
-.bld{position:relative;background:var(--wood-l);border:3px solid var(--wood);border-radius:14px 14px 6px 6px;padding:30px 10px 10px;min-height:300px}
+.bld{margin-top:34px;position:relative;background:var(--wood-l);border:3px solid var(--wood);border-radius:14px 14px 6px 6px;padding:30px 10px 10px;min-height:300px}
 .bld::before{content:"";position:absolute;left:50%;top:-22px;transform:translateX(-50%);border:22px solid transparent;border-bottom-color:var(--wood);border-top:0;width:60%;}
 .floor{position:relative;height:62px;border-bottom:2px solid color-mix(in srgb,var(--wood) 45%,transparent);display:flex;align-items:center}
 .floor:last-child{border-bottom:0}
@@ -324,7 +324,8 @@ footer{color:var(--ink2);font-size:.82em;text-align:center;padding:20px 16px 80p
         <div class="floor"><span class="flab">3F</span></div>
         <div class="floor"><span class="flab">2F</span></div>
         <div class="floor"><span class="flab">1F（舌位最低）</span></div>
-      <p style="font-size:.8em;color:var(--red);margin:4px 0 0">屋頂上的紅色符號＝被踢出頂樓、變成雙母音的音</p></div>
+      </div>
+      <p style="font-size:.8em;color:var(--red);margin:6px 0 0">屋頂上的紅色符號＝被踢出頂樓、變成雙母音的音</p></div>
       <div>
         <div class="gapbar" id="gapbar"></div>
         <div class="row" style="justify-content:space-between;margin-bottom:6px"><b>拼法</b><span class="badge" id="frozenBadge">拼法還在跟著聲音變</span><b>發音</b></div>
@@ -798,7 +799,7 @@ function drawApt(){
     var f=v.fl[st], t=toks[v.id];
     t.textContent=v.lab[st];
     t.classList.toggle("di",f===-1);
-    t.style.left="calc("+(v.col*16.6+1)+"% + 2px)";
+    t.style.left="calc("+(v.col*15)+"% + 10px)";
     t.style.top=(f===-1? -4 : (top+f*fh+26))+"px";
   });
   WORDS.forEach(function(w){
